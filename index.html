@@ -1,0 +1,473 @@
+<!DOCTYPEPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>SMKN 4 Buton Utara | TKJ, TITL, TKP, AKT</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f9fc;
+      color: #1f2e3a;
+      scroll-behavior: smooth;
+    }
+
+    /* container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header & navbar */
+    header {
+      background: linear-gradient(98deg, #0a3b3f 0%, #166c6b 100%);
+      color: white;
+      padding: 0.9rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logo h1 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+    }
+    .logo p {
+      font-size: 0.75rem;
+      opacity: 0.85;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+    .nav-links a:hover {
+      color: #fce38a;
+      border-bottom: 2px solid #fce38a;
+      padding-bottom: 4px;
+    }
+
+    /* Hero section */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 20, 20, 0.7)), url('https://placehold.co/1600x550/1f6e6b/white?text=SMKN+4+Buton+Utara+%7C+Berprestasi');
+      background-size: cover;
+      background-position: center 40%;
+      text-align: center;
+      padding: 90px 20px;
+      color: white;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 720px;
+      margin: 0 auto;
+      font-weight: 500;
+    }
+
+    /* section title */
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 3rem 0 1rem;
+      color: #0b4144;
+    }
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #1f8a7c;
+      margin: 12px auto 0;
+      border-radius: 4px;
+    }
+
+    /* jurusan grid */
+    .jurusan-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 34px -12px rgba(0, 0, 0, 0.18);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      background-color: #cbdbe2;
+      display: block;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+      flex: 1;
+    }
+    .card-content h3 {
+      font-size: 1.7rem;
+      margin-bottom: 0.3rem;
+      color: #115e60;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badge {
+      background: #eef3f2;
+      border-radius: 40px;
+      padding: 5px 12px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #1b706b;
+      display: inline-block;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    .card-content p {
+      color: #2c4b4e;
+      line-height: 1.45;
+      margin-top: 8px;
+    }
+    .caption-gambar {
+      background: #f0f6f5;
+      border-radius: 20px;
+      padding: 8px 12px;
+      margin-top: 14px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #105e5a;
+      display: inline-block;
+    }
+
+    /* visi misi */
+    .visi-misi-wrapper {
+      background: linear-gradient(115deg, #ffffff 0%, #f4faf9 100%);
+      border-radius: 2rem;
+      padding: 2rem;
+      margin: 2rem 0 2rem;
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.03);
+      border: 1px solid #cfe4e1;
+    }
+    .visi-misi-wrapper h3 {
+      font-size: 1.9rem;
+      color: #0c5a5a;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .vm-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .visi-box, .misi-box {
+      flex: 1;
+      background: #ffffffd9;
+      padding: 1.5rem;
+      border-radius: 1.8rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      transition: 0.2s;
+    }
+    .visi-box h4, .misi-box h4 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: #1d7b76;
+      border-left: 5px solid #1d7b76;
+      padding-left: 15px;
+    }
+    .visi-box p {
+      font-size: 1.05rem;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+    .misi-box ul {
+      padding-left: 1.3rem;
+      margin-top: 0.5rem;
+    }
+    .misi-box li {
+      margin: 12px 0;
+      line-height: 1.45;
+    }
+
+    /* galeri kecil / info tambahan */
+    .info-sekolah {
+      background: white;
+      border-radius: 28px;
+      padding: 1.7rem;
+      margin: 1.8rem 0;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+    }
+    .info-sekolah h3 i {
+      color: #136e6b;
+    }
+    .gallery-mini {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .gallery-item {
+      flex: 1;
+      min-width: 170px;
+      text-align: center;
+      background: #fbfefd;
+      border-radius: 24px;
+      padding: 12px 8px;
+    }
+    .gallery-img {
+      width: 100%;
+      border-radius: 20px;
+      height: 120px;
+      object-fit: cover;
+      background: #d9e3e5;
+    }
+
+    /* footer */
+    .footer {
+      background: #082c2e;
+      color: #d2e7e5;
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+    .footer a {
+      color: #fbdd7e;
+      text-decoration: none;
+    }
+    hr {
+      border-color: #286e6b;
+      margin: 16px 0;
+    }
+
+    @media (max-width: 680px) {
+      .navbar {
+        flex-direction: column;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+      .vm-grid {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container navbar">
+    <div class="logo">
+      <h1>SMKN 4 Buton Utara</h1>
+      <p>Kompeten | Religius | Mandiri | Berdaya Saing</p>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Beranda</a></li>
+      <li><a href="#jurusan">Jurusan</a></li>
+      <li><a href="#visimisi">Visi & Misi</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </div>
+</header>
+
+<section id="home" class="hero">
+  <div class="container">
+    <h2>Mencetak Generasi Terampil & Berkarakter</h2>
+    <p>SMK Negeri 4 Buton Utara membekali siswa dengan kompetensi unggulan di bidang teknologi, energi, konstruksi, dan bisnis untuk masa depan gemilang.</p>
+  </div>
+</section>
+
+<main class="container" id="jurusan">
+  <h2 class="section-title">✨ 4 Jurusan Kompetensi Keahlian ✨</h2>
+  <div class="jurusan-grid">
+    
+    <!-- 1. TKJ - Teknik Komputer dan Jaringan (dengan gambar contoh) -->
+    <div class="card">
+      <img class="card-img" src="https://placehold.co/600x420/2b6f6b/white?text=TKJ+%7C+Lab+Jaringan+&+Server" alt="Contoh Jurusan TKJ - Lab Komputer dan Jaringan">
+      <div class="card-content">
+        <div class="badge"><i class="fas fa-microchip"></i> Teknologi Informasi</div>
+        <h3><i class="fas fa-network-wired"></i> TKJ</h3>
+        <p><strong>Teknik Komputer dan Jaringan</strong> – Mempelajari perakitan PC, instalasi jaringan (LAN, WAN), konfigurasi router & switch, administrasi server, serta keamanan siber dasar.</p>
+        <div class="caption-gambar"><i class="fas fa-image"></i> Contoh gambar: Praktik konfigurasi jaringan & ruang server modern</div>
+      </div>
+    </div>
+    
+    <!-- 2. TITL - Teknik Instalasi Tenaga Listrik -->
+    <div class="card">
+      <img class="card-img" src="https://placehold.co/600x420/408c6b/white?text=TITL+%7C+Panel+Listrik+Industri" alt="Contoh Jurusan TITL - Instalasi Listrik & Panel">
+      <div class="card-content">
+        <div class="badge"><i class="fas fa-bolt"></i> Energi & Elektrifikasi</div>
+        <h3><i class="fas fa-plug"></i> TITL</h3>
+        <p><strong>Teknik Instalasi Tenaga Listrik</strong> – Instalasi penerangan, tenaga, sistem kontrol, motor listrik, panel hubung bagi (PHB), dan proteksi kelistrikan berbasis standar PUIL.</p>
+        <div class="caption-gambar"><i class="fas fa-image"></i> Contoh gambar: Pemasangan panel distribusi & praktek motor listrik</div>
+      </div>
+    </div>
+    
+    <!-- 3. TKP - Teknik Konstruksi dan Perumahan -->
+    <div class="card">
+      <img class="card-img" src="https://placehold.co/600x420/b58847/white?text=TKP+%7C+Desain+Arsitektur+Rumah" alt="Contoh Jurusan TKP - Gambar Konstruksi & Maket">
+      <div class="card-content">
+        <div class="badge"><i class="fas fa-draw-polygon"></i> Konstruksi & Properti</div>
+        <h3><i class="fas fa-building"></i> TKP</h3>
+        <p><strong>Teknik Konstruksi dan Perumahan</strong> – Menggambar bangunan (2D/3D), estimasi biaya, ilmu bahan bangunan, konstruksi beton & kayu, dan manajemen proyek perumahan.</p>
+        <div class="caption-gambar"><i class="fas fa-image"></i> Contoh gambar: Desain rumah modern & pembuatan maket bangunan</div>
+      </div>
+    </div>
+    
+    <!-- 4. AKT - Akuntansi -->
+    <div class="card">
+      <img class="card-img" src="https://placehold.co/600x420/557c9c/white?text=Akuntansi+%7C+Laporan+Keuangan+Digital" alt="Contoh Jurusan Akuntansi - Pembukuan dan Software Akuntansi">
+      <div class="card-content">
+        <div class="badge"><i class="fas fa-chart-pie"></i> Bisnis & Keuangan</div>
+        <h3><i class="fas fa-calculator"></i> AKT</h3>
+        <p><strong>Akuntansi</strong> – Mempelajari siklus akuntansi, jurnal umum, buku besar, laporan keuangan, MYOB / Accurate, perpajakan dasar, serta kewirausahaan.</p>
+        <div class="caption-gambar"><i class="fas fa-image"></i> Contoh gambar: Analisis laporan keuangan & praktik komputer akuntansi</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VISI & MISI -->
+  <div id="visimisi" class="visi-misi-wrapper">
+    <h3><i class="fas fa-bullseye"></i> Visi & Misi SMKN 4 Buton Utara</h3>
+    <div class="vm-grid">
+      <div class="visi-box">
+        <h4>📌 Visi</h4>
+        <p>"Menjadi Sekolah Menengah Kejuruan yang unggul, berkarakter, dan berdaya saing global di bidang teknologi, industri, dan bisnis, berlandaskan iman dan taqwa serta kearifan lokal Buton Utara."</p>
+      </div>
+      <div class="misi-box">
+        <h4>🎯 Misi</h4>
+        <ul>
+          <li><i class="fas fa-check-circle" style="color:#1f8a7c;"></i> Menyelenggarakan pembelajaran berbasis kompetensi dan praktik industri (teaching factory).</li>
+          <li><i class="fas fa-check-circle" style="color:#1f8a7c;"></i> Mengembangkan sarana prasarana modern untuk jurusan TKJ, TITL, TKP, dan Akuntansi.</li>
+          <li><i class="fas fa-check-circle" style="color:#1f8a7c;"></i> Membentuk karakter disiplin, religius, jujur, dan bertanggung jawab.</li>
+          <li><i class="fas fa-check-circle" style="color:#1f8a7c;"></i> Menjalin kerjasama dengan DU/DI serta dunia usaha untuk penyaluran lulusan.</li>
+          <li><i class="fas fa-check-circle" style="color:#1f8a7c;"></i> Meningkatkan jiwa kewirausahaan siswa melalui unit produksi sekolah.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALERI PRAKTIK JURUSAN + gambar tambahan sesuai masing-masing jurusan -->
+  <div class="info-sekolah">
+    <h3 style="font-size:1.6rem; margin-bottom:0.5rem;"><i class="fas fa-microscope"></i> Galeri Kegiatan Praktik Siswa</h3>
+    <p style="margin-bottom: 1rem;">Berikut adalah potongan gambar contoh dari aktivitas praktik setiap kompetensi keahlian di SMKN 4 Buton Utara:</p>
+    <div class="gallery-mini">
+      <div class="gallery-item">
+        <img class="gallery-img" src="https://placehold.co/300x160/2a7f74/white?text=TKJ+%7C+Rack+Server" alt="Gambar contoh TKJ">
+        <span><strong>TKJ</strong> - Rack server & kabeling</span>
+      </div>
+      <div class="gallery-item">
+        <img class="gallery-img" src="https://placehold.co/300x160/4b8e5e/white?text=TITL+%7C+Panel+PHB" alt="Gambar contoh TITL">
+        <span><strong>TITL</strong> - Instalasi panel listrik</span>
+      </div>
+      <div class="gallery-item">
+        <img class="gallery-img" src="https://placehold.co/300x160/c9964b/white?text=TKP+%7C+Gambar+Teknik" alt="Gambar contoh TKP">
+        <span><strong>TKP</strong> - Desain rumah & maket</span>
+      </div>
+      <div class="gallery-item">
+        <img class="gallery-img" src="https://placehold.co/300x160/5f7f9f/white?text=AKT+%7C+Pembukuan" alt="Gambar contoh Akuntansi">
+        <span><strong>AKT</strong> - Laporan keuangan</span>
+      </div>
+    </div>
+    <p style="margin-top: 1rem; font-size:0.85rem; text-align:center; background:#ecf6f4; padding:6px; border-radius:28px;"><i class="fas fa-camera"></i> Setiap gambar merupakan ilustrasi kegiatan kompetensi jurusan (laboratorium, bengkel, studio akuntansi)</p>
+  </div>
+
+  <!-- QUOTE / TUJUAN SEKOLAH -->
+  <div style="background: #e9f3f1; border-radius: 28px; padding: 1.5rem; margin: 1rem 0 1rem; text-align: center;">
+    <i class="fas fa-quote-left" style="font-size: 2rem; color:#166c6b; opacity:0.6;"></i>
+    <p style="font-size: 1.2rem; font-weight: 500;">SMKN 4 Buton Utara terus berinovasi mencetak tenaga kerja tingkat menengah yang profesional, adaptif terhadap perkembangan industri 4.0 dan kebutuhan daerah.</p>
+  </div>
+</main>
+
+<footer class="footer" id="kontak">
+  <div class="container">
+    <div style="margin-bottom: 1rem;">
+      <i class="fas fa-location-dot"></i> Jl. Poros Pendidikan, Desa/Kel. Bone-Bone, Kec. Bone-Bone, Kab. Buton Utara, Sulawesi Tenggara 93755<br/>
+      <i class="fas fa-phone"></i> (0402) 987654 | <i class="fas fa-envelope"></i> humas@smkn4butonutara.sch.id
+    </div>
+    <div>
+      <i class="fab fa-instagram"></i> @smkn4_bu   |   
+      <i class="fab fa-facebook"></i> smkn4butonutara   |   
+      <i class="fab fa-youtube"></i> SMK Negeri 4 Buton Utara Official
+    </div>
+    <hr />
+    <p>© 2025 SMKN 4 Buton Utara - All Rights Reserved. Membangun generasi cerdas, terampil, dan berakhlak mulia.</p>
+  </div>
+</footer>
+
+<script>
+  // Smooth scrolling untuk navigasi
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const hash = this.getAttribute('href');
+      if (hash && hash.startsWith('#')) {
+        e.preventDefault();
+        const targetElement = document.querySelector(hash);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+  // tambahan sedikit untuk hero home jika ada link #home
+  const homeLink = document.querySelector('.nav-links a[href="#home"]');
+  if(homeLink) {
+    homeLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+</script>
+</body>
+</html>
+```
